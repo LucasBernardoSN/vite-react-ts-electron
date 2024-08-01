@@ -1,0 +1,31 @@
+/**
+ * @see https://www.electron.build/configuration/configuration
+ */
+{
+  appId: 'com.lucasbernardosn.vite-react-ts-electron',
+  productName: 'Vite + React + TS + Electron',
+  copyright: 'Copyright © 2024 ${author}',
+  asar: true,
+  directories: {
+    output: 'release/${version}',
+    buildResources: 'electron/resources',
+  },
+  files: ['dist', 'dist-electron'],
+  win: {
+    target: [
+      {
+        target: 'nsis',
+        arch: ['x64'],
+      },
+    ],
+    artifactName: '${productName}-Windows-${version}-Setup.${ext}',
+  },
+  mac: {
+    target: ['dmg'],
+    artifactName: '${productName}-Mac-${version}-Installer.${ext}',
+  },
+  linux: {
+    target: ['AppImage'],
+    artifactName: '${productName}-Linux-${version}.${ext}',
+  },
+}

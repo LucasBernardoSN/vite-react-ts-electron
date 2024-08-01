@@ -1,0 +1,51 @@
+{
+  "version": "1.0.0",
+  "name": "vite-react-ts-electron",
+  "description": "Vite + React + TS + Electron app template",
+  "author": "@LucasBernardoSN",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LucasBernardoSN/vite-react-ts-electron.git"
+  },
+  "type": "module",
+  "main": "dist-electron/main.js",
+  "scripts": {
+    "dev": "cross-env VITE_APP_PLATFORM=web vite",
+    "dev:web": "cross-env VITE_APP_PLATFORM=web vite",
+    "dev:desktop": "cross-env VITE_APP_PLATFORM=desktop vite",
+    "build:web": "tsc && vite build",
+    "build:desktop": "tsc && vite build && electron-builder",
+    "release:desktop": "tsc && vite build && electron-builder --publish=always",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@lucasbernardosn/eslint-config": "1.1.2",
+    "@types/react": "18.2.64",
+    "@types/react-dom": "18.2.21",
+    "@vitejs/plugin-react": "4.2.1",
+    "cross-env": "7.0.3",
+    "eslint": "8.57.0",
+    "typescript": "5.2.2",
+    "vite": "5.1.6"
+  },
+  "peerDependencies": {
+    "@types/auto-launch": "5.0.5",
+    "auto-launch": "5.0.5",
+    "chokidar": "3.6.0",
+    "electron-builder": "22.11.11",
+    "electron-log": "5.1.7",
+    "electron-store": "10.0.0",
+    "electron-updater": "6",
+    "electron-windows-badge": "1.1.0",
+    "electron": "30.0.1",
+    "vite-plugin-electron-renderer": "0.14.5",
+    "vite-plugin-electron": "0.28.6"
+  },
+  "packageManager": "pnpm@9.6.0+sha512.38dc6fba8dba35b39340b9700112c2fe1e12f10b17134715a4aa98ccf7bb035e76fd981cf0bb384dfa98f8d6af5481c2bef2f4266a24bfa20c34eb7147ce0b5e"
+}
